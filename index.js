@@ -4,15 +4,7 @@ const left_arrow=document.querySelectorAll('button')[0]
 const right_arrow=document.querySelectorAll('button')[1]
 let activeimgs=[0,1,2]
 
-
-const imgsreload=(activeimgs)=>{
-        img_div.innerHTML=`
-            <img src="./img/img (${activeimgs[0]}).png">
-            <img src="./img/img (${activeimgs[1]}).png">
-            <img src="./img/img (${activeimgs[2]}).png">`
-}
-imgsreload(activeimgs)
-right_arrow.addEventListener('click',()=>{
+const nextimgs=()=>{
     if(activeimgs[2]==8){
         activeimgs[0]+=1
         activeimgs[1]+=1
@@ -33,12 +25,17 @@ right_arrow.addEventListener('click',()=>{
         activeimgs[1]+=1
         activeimgs[2]+=1
     }
-    // for(let j of activeimgs){
-        //     imgs[j].style.display="block"
-        // }
     console.log(activeimgs);
     imgsreload(activeimgs)
-})
+}
+const imgsreload=(activeimgs)=>{
+        img_div.innerHTML=`
+            <img src="./img/img (${activeimgs[0]}).png">
+            <img src="./img/img (${activeimgs[1]}).png">
+            <img src="./img/img (${activeimgs[2]}).png">`
+}
+imgsreload(activeimgs)
+right_arrow.addEventListener('click',nextimgs)
 left_arrow.addEventListener('click',()=>{
     if(activeimgs[2]==0){
         activeimgs[0]-=1
@@ -66,3 +63,4 @@ left_arrow.addEventListener('click',()=>{
     console.log(activeimgs);
     imgsreload(activeimgs)
 })
+setInterval(nextimgs,3000)
