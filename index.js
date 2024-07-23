@@ -5,9 +5,9 @@ const right_arrow=document.querySelectorAll('button')[1]
 let activeimgs=[0,1,2]
 const imgsreload=(activeimgs)=>{
     img_div.innerHTML=`
-        <img src="./img/img (${activeimgs[0]}).png" style="pointer-events:none">
-        <img src="./img/img (${activeimgs[1]}).png" style="pointer-events:none">
-        <img src="./img/img (${activeimgs[2]}).png" style="pointer-events:none">`
+        <img src="./img/img (${activeimgs[0]}).png" style="user-select: none;pointer-events:none">
+        <img src="./img/img (${activeimgs[1]}).png" style="user-select: none;pointer-events:none">
+        <img src="./img/img (${activeimgs[2]}).png" style="user-select: none;pointer-events:none">`
     const imgs=img_div.querySelectorAll('img')
 }
 const previmgs=()=>{
@@ -62,7 +62,7 @@ const nextimgs=()=>{
 imgsreload(activeimgs)
 right_arrow.addEventListener('click',nextimgs)
 left_arrow.addEventListener('click',previmgs)
-// setInterval(nextimgs,2000)
+setInterval(nextimgs,2000)
 
 let startX = 0, endX = 0;
 
