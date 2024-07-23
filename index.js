@@ -12,7 +12,7 @@ const imgsreload=(activeimgs)=>{
             <img src="./img/img (${activeimgs[2]}).png">`
 }
 imgsreload(activeimgs)
-left_arrow.addEventListener('click',()=>{
+right_arrow.addEventListener('click',()=>{
     if(activeimgs[2]==8){
         activeimgs[0]+=1
         activeimgs[1]+=1
@@ -39,7 +39,7 @@ left_arrow.addEventListener('click',()=>{
     console.log(activeimgs);
     imgsreload(activeimgs)
 })
-right_arrow.addEventListener('click',()=>{
+left_arrow.addEventListener('click',()=>{
     if(activeimgs[2]==0){
         activeimgs[0]-=1
         activeimgs[1]-=1
